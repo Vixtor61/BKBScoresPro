@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout android:background="@color/design_default_color_primary_dark" android:id="@+id/ln_new" android:clickable="true" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="0dp">
+        <TextView android:id="@+id/new_match" android:textSize="@dimen/text_big"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+
+                  android:text="New Match" android:gravity="center"
+        />
+    </LinearLayout>
+    <LinearLayout android:background="@color/colorPrimaryDark" android:id="@+id/ln_saved" android:clickable="true" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="0dp">
+
+        <TextView android:id="@+id/matches" android:textSize="@dimen/text_big" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center" android:text="Saved Matches" android:gravity="center"/>
+
+    </LinearLayout>
+</LinearLayout>
