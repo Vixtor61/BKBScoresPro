@@ -13,7 +13,7 @@ interface TeamDao{
     fun getAll(): LiveData<List<Team>>
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun insert(team:Team)
+    suspend fun insert(team:Team):Long
 
     @Query("DELETE FROM team")
     fun nukeTable()

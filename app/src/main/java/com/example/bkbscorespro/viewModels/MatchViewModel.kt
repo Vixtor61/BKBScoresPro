@@ -10,6 +10,7 @@ import com.example.bkbscorespro.database.entities.Match
 import com.example.bkbscorespro.database.entities.Team
 import com.example.bkbscorespro.database.repositories.MatchRepo
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class MatchViewModel(application: Application) : AndroidViewModel(application){
@@ -24,9 +25,12 @@ class MatchViewModel(application: Application) : AndroidViewModel(application){
     }
 
     fun insert(match: Match){
+
         viewModelScope.launch (Dispatchers.IO) {
             matchRepo.insert(match)
         }
     }
+
+
 
 }

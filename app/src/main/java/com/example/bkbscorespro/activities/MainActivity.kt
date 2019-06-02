@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.bkbscorespro.R
+import com.example.bkbscorespro.database.entities.Match
 import com.example.bkbscorespro.database.entities.Team
 import com.example.bkbscorespro.gui.fragments.MainFragment
 import com.example.bkbscorespro.gui.fragments.MatchesListFragment
@@ -17,12 +18,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionListener,NewMatchFragment.NewMatchListener,MatchesListFragment.MatchesFragmetListener{
+    override fun matchOnclick(match: Match) {
+        Toast.makeText(this,match.id.toString(),Toast.LENGTH_LONG).show()
+
+    }
+
     private lateinit var teamViewModel: TeamViewModel
 
 
-    override fun matchOnclick(int: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override fun startMatch(teamA:String,teamB:String) {
 

@@ -3,6 +3,7 @@ package com.example.bkbscorespro.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.bkbscorespro.R
 import com.example.bkbscorespro.database.entities.Match
@@ -32,8 +33,9 @@ class MatchActivity : AppCompatActivity(),LifecycleOwner {
         teamViewModel = ViewModelProviders.of(this).get(TeamViewModel::class.java)
         teamViewModel.currentTeamA = Team(teamA)
         teamViewModel.currentTeamB = Team(teamB)
-        teamViewModel.insert(teamViewModel.currentTeamA)
-        teamViewModel.insert(teamViewModel.currentTeamB)
+       teamViewModel.insertA(teamViewModel.currentTeamA)
+        teamViewModel.insertB(teamViewModel.currentTeamB)
+        Log.i("CURRENT",teamViewModel.idA.toString())
         teamViewModel.currentScoreA.observe(this, Observer { score->
                 score?.let {
                     score_a.text = score.toString()
@@ -70,6 +72,7 @@ class MatchActivity : AppCompatActivity(),LifecycleOwner {
     }
 
     private fun score(team:String,points:Int){
+        Log.i("CURRENT",teamViewModel.idA.toString())
         if (team == teamViewModel.currentTeamA.teamName){
             teamViewModel.currentScoreA.value = teamViewModel.currentScoreA.value!! + points
         }else{
@@ -79,7 +82,9 @@ class MatchActivity : AppCompatActivity(),LifecycleOwner {
 
     }
     fun saveMatch(){
-        var match = Match(teamViewModel.currentScoreA.value!!,teamViewModel.currentScoreB.value!!,teamViewModel.currentTeamA.id,teamViewModel.currentTeamB.id)
+        var match = Match(teamViewModel.idA.toInt(),teamViewModel.idB.toInt(),teamViewModel.currentScoreA.value!!,teamViewModel.currentScoreB.value!!)
+
+        Log.i("CURRENT_MATCH",match.scoreTeamA.toString() + "score " + match.scoreTeamB.toString()+ " teamA" + match.teamA.toString()+ "teamB" + match.teamB.toString())
         matchViewModel.insert(match)
         intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
