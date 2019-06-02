@@ -1,9 +1,7 @@
 package com.example.bkbscorespro.viewModels
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.bkbscorespro.database.BkbDatabase
 import com.example.bkbscorespro.database.entities.Team
 import com.example.bkbscorespro.database.repositories.TeamRepo
@@ -13,6 +11,8 @@ import kotlinx.coroutines.launch
 class TeamViewModel(application: Application) : AndroidViewModel(application){
     lateinit var currentTeamA: Team
     lateinit var currentTeamB: Team
+    var currentScoreA: MutableLiveData<Int> = MutableLiveData<Int>(0)
+    var currentScoreB: MutableLiveData<Int> = MutableLiveData<Int>(0)
 
 
     private var teamRepo:TeamRepo

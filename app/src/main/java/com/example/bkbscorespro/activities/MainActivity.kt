@@ -1,24 +1,39 @@
 package com.example.bkbscorespro.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.bkbscorespro.R
+import com.example.bkbscorespro.database.entities.Team
 import com.example.bkbscorespro.gui.fragments.MainFragment
 import com.example.bkbscorespro.gui.fragments.MatchesListFragment
 import com.example.bkbscorespro.gui.fragments.NewMatchFragment
+import com.example.bkbscorespro.viewModels.TeamViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionListener,NewMatchFragment.NewMatchListener,MatchesListFragment.MatchesFragmetListener{
+    private lateinit var teamViewModel: TeamViewModel
+
+
     override fun matchOnclick(int: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun startMatch(teamA:String,teamB:String) {
-        Toast.makeText(this,teamA,Toast.LENGTH_LONG).show()
+
+
+
+
+        intent = Intent(this,MatchActivity::class.java).apply {
+            putExtra("TEAM_A",teamA)
+            putExtra("TEAM_B",teamB)
+        }
+        startActivity(intent)
     }
 
     private lateinit var mainFragment: MainFragment
@@ -58,7 +73,7 @@ class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        teamViewModel = ViewModelProviders.of(this).get(TeamViewModel::class.java)
         mainFragment = MainFragment.newInstance()
         changeFragment(R.id.og_fragment,mainFragment)
 
