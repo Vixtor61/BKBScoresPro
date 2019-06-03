@@ -14,7 +14,9 @@ import com.example.bkbscorespro.gui.fragments.MainFragment
 import com.example.bkbscorespro.gui.fragments.MatchesListFragment
 import com.example.bkbscorespro.gui.fragments.NewMatchFragment
 import com.example.bkbscorespro.viewModels.TeamViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_show_match.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import java.io.Serializable
 
@@ -37,11 +39,22 @@ class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionList
 
 
 
-        intent = Intent(this,MatchActivity::class.java).apply {
-            putExtra("TEAM_A",teamA)
-            putExtra("TEAM_B",teamB)
-        }
-        startActivity(intent)
+            if (teamA == teamB){
+                Toast.makeText(this,"Team A and B must be different",Toast.LENGTH_SHORT).show()
+            }
+        else if (teamA == "" || teamB == ""){
+                Toast.makeText(this,"You must enter two teams",Toast.LENGTH_SHORT).show()
+            }
+        else{
+                intent = Intent(this,MatchActivity::class.java).apply {
+                    putExtra("TEAM_A",teamA)
+                    putExtra("TEAM_B",teamB)
+                }
+                startActivity(intent)
+
+            }
+
+
     }
 
     private lateinit var mainFragment: MainFragment
@@ -86,6 +99,7 @@ class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionList
         supportFragmentManager.beginTransaction().replace(R.id.og_fragment,mainFragment).commit()
 
 
+
     }
     private fun changeFragment(id:Int,fragment: Fragment){
         supportFragmentManager.beginTransaction().replace(id,fragment).addToBackStack(null).commit()
@@ -97,7 +111,7 @@ class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionList
             supportFragmentManager.popBackStackImmediate()
         }
         else{
-            super.onBackPressed()
+                super.onBackPressed()
         }
     }
 
