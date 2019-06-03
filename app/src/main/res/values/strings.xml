@@ -6,4 +6,14 @@
     <string name="filler">sample_text</string>
     <string name="two_points">2 Points</string>
     <string name="three_points">3 Points</string>
+    <string name="one_point">1 Point</string>
+    <string name="team_a">Lakers</string>
+    <string name="celtics">Celtics</string>
+    <string name="home">Home Team</string>
+    <string name="away">Away Team</string>
+    <string name="recent_games">Recent Games</string>
+    <string name="date">Date:</string>
+    <string name="draw">Draw</string>
+    <string name="loser">Loser</string>
+    <string name="winner">Winner!</string>
 </resources>

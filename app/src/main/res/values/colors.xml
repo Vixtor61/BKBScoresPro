@@ -3,4 +3,9 @@
     <color name="colorPrimary">#000303</color>
     <color name="colorPrimaryDark">#323832</color>
     <color name="colorAccent">#3C3B3B</color>
+    <color name="white">#D3CBCB</color>
+    <color name="border_color">#353434</color>
+    <color name="win">#43A047</color>
+    <color name="loss">#F41E2C</color>
+    <color name="whiter_white">#F3E5F5</color>
 </resources>

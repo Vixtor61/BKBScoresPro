@@ -65,11 +65,11 @@ class MatchActivity : AppCompatActivity(),LifecycleOwner {
         tv_team_a.text = teamA
         tv_team_b.text = teamB
 
-
+        btn_1_a.setOnClickListener { score(teamA,1) }
         btn_2_a.setOnClickListener { score(teamA,2) }
         btn_3_a.setOnClickListener { score(teamA,3) }
 
-
+        btn_1_b.setOnClickListener { score(teamB,1) }
         btn_2_b.setOnClickListener { score(teamB,2) }
         btn_3_b.setOnClickListener { score(teamB,3) }
         end_match.setOnClickListener { saveMatch() }

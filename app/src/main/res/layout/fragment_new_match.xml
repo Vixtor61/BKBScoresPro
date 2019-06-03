@@ -4,16 +4,31 @@
 
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_new" />
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:layout_marginLeft="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal" android:layout_marginTop="@dimen/medium_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/home" android:textSize="@dimen/medium_text"/>
+
+    <EditText android:layout_marginLeft="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal" android:hint="@string/team_a" android:layout_marginTop="@dimen/margin_normal" android:id="@+id/team_a" android:layout_width="match_parent"  android:layout_height="wrap_content" android:textSize="@dimen/medium_text"/>
+    <TextView android:layout_marginLeft="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/away" android:textSize="@dimen/medium_text"/>
+
+    <EditText android:layout_marginLeft="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal" android:hint="@string/celtics" android:layout_marginTop="@dimen/margin_normal" android:id="@+id/team_b" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="@dimen/medium_text"/>
+        <LinearLayout android:layout_weight="1" android:layout_width="match_parent" android:layout_height="0dp"></LinearLayout>
+        <Button
+
+                android:background="@android:color/transparent"
+                android:bottomRightRadius="30dp"
+                android:bottomLeftRadius="30dp"
+                android:topLeftRadius="30dp"
+                android:topRightRadius="30dp"
 
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TeamA" android:textSize="@dimen/medium_text"/>
-
-    <EditText android:id="@+id/team_a" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TeamB" android:textSize="@dimen/medium_text"/>
-
-    <EditText android:id="@+id/team_b" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-    <Button android:id="@+id/launch_match" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="@dimen/medium_text" android:text="Start"/>
-
-
+                android:id="@+id/launch_match" android:layout_marginBottom="@dimen/margin_medium_big" android:textAllCaps="false" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="@dimen/text_big" android:text="Start"/>
+    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>

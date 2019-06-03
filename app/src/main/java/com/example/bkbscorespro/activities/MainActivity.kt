@@ -23,7 +23,6 @@ import java.io.Serializable
 
 class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionListener,NewMatchFragment.NewMatchListener,MatchesListFragment.MatchesFragmetListener{
     override fun matchOnclick(match: Match) {
-        Toast.makeText(this,match.id.toString(),Toast.LENGTH_LONG).show()
         var intent = Intent(this,ShowMatchActivity::class.java)
         intent.putExtra("EXTRA",match)
         startActivity(intent)

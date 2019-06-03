@@ -1,5 +1,8 @@
 package com.example.bkbscorespro.activities
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.*
@@ -43,7 +46,25 @@ class ShowMatchActivity : AppCompatActivity(),LifecycleOwner {
 private fun bind(){
     tv_score_a_ac.text = match.scoreTeamA.toString()
     tv_score_b_ac.text = match.scoreTeamB.toString()
-    date.text = match.date
+    date.text =match.date
+    when {
+        match.scoreTeamA > match.scoreTeamB -> {
+            result_b.text = resources.getString(R.string.loser)
+            result_a.text = resources.getString(R.string.winner)
+            match_team_a.setBackgroundColor(resources.getColor(R.color.win))
+            match_team_b.setBackgroundColor(resources.getColor(R.color.loss))
+
+        }
+        match.scoreTeamA < match.scoreTeamB -> {
+            result_a.text = resources.getString(R.string.loser)
+            result_b.text = resources.getString(R.string.winner)
+
+            match_team_b.setBackgroundColor(resources.getColor(R.color.win))
+            match_team_a.setBackgroundColor(resources.getColor(R.color.loss))
+        }
+
+    }
+
 }
 
 
