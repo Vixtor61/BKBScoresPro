@@ -20,11 +20,12 @@
         <LinearLayout android:layout_weight="1" android:layout_width="match_parent" android:layout_height="0dp"></LinearLayout>
         <Button
 
-                android:background="@android:color/transparent"
+                android:background="@drawable/border"
                 android:bottomRightRadius="30dp"
                 android:bottomLeftRadius="30dp"
                 android:topLeftRadius="30dp"
                 android:topRightRadius="30dp"
+                android:padding="@dimen/big_padding"
 
 
                 android:id="@+id/launch_match" android:layout_marginBottom="@dimen/margin_medium_big" android:textAllCaps="false" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="@dimen/text_big" android:text="Start"/>

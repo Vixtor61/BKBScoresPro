@@ -23,27 +23,27 @@
 
             <TextView style="@style/shadoweffect" android:textColor="@color/whiter_white" android:layout_margin="@dimen/margin_normal" android:gravity="center" android:id="@+id/tv_team_a" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="@dimen/medium_text" android:text="@string/filler"/>
 
-            <Button android:layout_margin="@dimen/margin_small" android:background="@android:color/transparent" android:padding="@dimen/medium_text" android:id="@+id/btn_1_a" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_point" android:textSize="@dimen/medium_text"/>
-            <Button android:layout_margin="@dimen/margin_small" android:background="@android:color/transparent" android:padding="@dimen/medium_text" android:id="@+id/btn_2_a" android:layout_gravity="center"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/two_points" android:textSize="@dimen/medium_text"/>
-            <Button android:layout_margin="@dimen/margin_small" android:background="@android:color/transparent" android:padding="@dimen/medium_text" android:id="@+id/btn_3_a" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/three_points" android:textSize="@dimen/medium_text"/>
+            <Button android:layout_margin="@dimen/margin_small" android:background="@drawable/border" android:padding="@dimen/medium_text" android:id="@+id/btn_1_a" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_point" android:textSize="@dimen/medium_text"/>
+            <Button android:layout_margin="@dimen/margin_small" android:background="@drawable/border" android:padding="@dimen/medium_text" android:id="@+id/btn_2_a" android:layout_gravity="center"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/two_points" android:textSize="@dimen/medium_text"/>
+            <Button android:layout_margin="@dimen/margin_small" android:background="@drawable/border" android:padding="@dimen/medium_text" android:id="@+id/btn_3_a" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/three_points" android:textSize="@dimen/medium_text"/>
 
-            <TextView android:layout_margin="@dimen/margin_normal" android:layout_gravity="center" android:id="@+id/score_a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/filler" android:textSize="@dimen/medium_big_text"/>
+            <TextView android:layout_margin="@dimen/margin_normal" android:layout_gravity="center" android:id="@+id/score_a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/filler" android:textSize="@dimen/text_big"/>
 
         </LinearLayout>
         <LinearLayout android:orientation="vertical" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content">
 
             <TextView style="@style/shadoweffect" android:textColor="@color/whiter_white" android:layout_margin="@dimen/margin_normal" android:gravity="center" android:id="@+id/tv_team_b" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/filler" android:textSize="@dimen/medium_text"/>
-            <Button android:layout_margin="@dimen/margin_small" android:background="@android:color/transparent" android:padding="@dimen/medium_text" android:id="@+id/btn_1_b" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_point" android:textSize="@dimen/medium_text"/>
+            <Button android:layout_margin="@dimen/margin_small" android:background="@drawable/border" android:padding="@dimen/medium_text" android:id="@+id/btn_1_b" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_point" android:textSize="@dimen/medium_text"/>
 
-            <Button android:layout_margin="@dimen/margin_small" android:background="@android:color/transparent" android:padding="@dimen/medium_text" android:id="@+id/btn_2_b" android:layout_gravity="center"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/two_points" android:textSize="@dimen/medium_text"/>
-            <Button android:layout_margin="@dimen/margin_small" android:background="@android:color/transparent" android:padding="@dimen/medium_text" android:id="@+id/btn_3_b" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/three_points" android:textSize="@dimen/medium_text"/>
-        <TextView android:layout_margin="@dimen/margin_normal" android:layout_gravity="center" android:id="@+id/score_b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/filler" android:textSize="@dimen/medium_big_text"/>
+            <Button android:layout_margin="@dimen/margin_small" android:background="@drawable/border" android:padding="@dimen/medium_text" android:id="@+id/btn_2_b" android:layout_gravity="center"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/two_points" android:textSize="@dimen/medium_text"/>
+            <Button android:layout_margin="@dimen/margin_small" android:background="@drawable/border" android:padding="@dimen/medium_text" android:id="@+id/btn_3_b" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/three_points" android:textSize="@dimen/medium_text"/>
+        <TextView android:layout_margin="@dimen/margin_normal" android:layout_gravity="center" android:id="@+id/score_b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/filler" android:textSize="@dimen/text_big"/>
         </LinearLayout>
 
 
 
     </LinearLayout>
-    <Button style="@style/shadoweffect" android:background="@android:color/transparent" android:padding="@dimen/big_padding" android:id="@+id/end_match" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="FINISH" android:textSize="@dimen/text_big" android:textColor="@color/whiter_white"/>
+    <Button style="@style/shadoweffect"  android:background="@drawable/border_black" android:padding="@dimen/big_padding" android:id="@+id/end_match" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="FINISH" android:textSize="@dimen/text_big" android:textColor="@color/whiter_white"/>
        </LinearLayout>
     </FrameLayout>
     </LinearLayout>
