@@ -43,6 +43,7 @@ class ShowMatchActivity : AppCompatActivity(),LifecycleOwner {
 private fun bind(){
     tv_score_a_ac.text = match.scoreTeamA.toString()
     tv_score_b_ac.text = match.scoreTeamB.toString()
+    date.text = match.date
 }
 
 

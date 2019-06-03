@@ -5,14 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.*
+import androidx.lifecycle.Observer
 import com.example.bkbscorespro.R
 import com.example.bkbscorespro.database.entities.Match
 import com.example.bkbscorespro.database.entities.Team
 import com.example.bkbscorespro.viewModels.MatchViewModel
 import com.example.bkbscorespro.viewModels.TeamViewModel
 import kotlinx.android.synthetic.main.activity_match.*
-
-
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.util.*
 
 
 class MatchActivity : AppCompatActivity(),LifecycleOwner {
@@ -82,7 +86,7 @@ class MatchActivity : AppCompatActivity(),LifecycleOwner {
 
     }
     fun saveMatch(){
-        var match = Match(teamViewModel.idA.toInt(),teamViewModel.idB.toInt(),teamViewModel.currentScoreA.value!!,teamViewModel.currentScoreB.value!!)
+        var match = Match(teamViewModel.idA.toInt(),teamViewModel.idB.toInt(),teamViewModel.currentScoreA.value!!,teamViewModel.currentScoreB.value!!,SimpleDateFormat("dd/MMMM/yyyy HH:mm").format(Date())  )
 
         Log.i("CURRENT_MATCH",match.scoreTeamA.toString() + "score " + match.scoreTeamB.toString()+ " teamA" + match.teamA.toString()+ "teamB" + match.teamB.toString())
         matchViewModel.insert(match)

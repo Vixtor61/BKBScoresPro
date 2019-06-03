@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout android:id="@+id/rv_ln" xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
+              android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               tools:context=".activities.ShowMatchActivity" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout android:layout_weight="3" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0dp">
     <LinearLayout android:layout_weight="1" android:orientation="vertical" android:layout_width="0dp" android:layout_height="match_parent">
         <TextView android:id="@+id/tv_name_a_ac" android:layout_width="match_parent" android:text="@string/filler" android:textSize="@dimen/medium_text" android:layout_height="wrap_content"/>
         <TextView android:id="@+id/tv_score_a_ac" android:layout_width="match_parent" android:text="@string/filler" android:textSize="@dimen/medium_big_text" android:layout_height="wrap_content"/>
@@ -14,6 +19,7 @@
         <TextView android:id="@+id/tv_score_b_ac" android:layout_width="match_parent" android:text="@string/filler" android:textSize="@dimen/medium_big_text" android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
+    </LinearLayout>
+    <TextView android:id="@+id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name"/>
 
 </LinearLayout>

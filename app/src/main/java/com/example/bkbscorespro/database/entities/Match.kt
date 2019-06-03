@@ -17,9 +17,9 @@ data class Match(
     val scoreTeamA: Int,
     @ColumnInfo(name = "score_team_b")
     val scoreTeamB: Int
-/*    ,
+    ,
     @ColumnInfo(name = "date")
-    val date: Date*/
+    val date: String
 
 ):Serializable{
     @PrimaryKey(autoGenerate = true)
