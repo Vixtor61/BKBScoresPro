@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 
 @Entity(tableName = "bkb_match",foreignKeys =
@@ -20,7 +21,7 @@ data class Match(
     @ColumnInfo(name = "date")
     val date: Date*/
 
-){
+):Serializable{
     @PrimaryKey(autoGenerate = true)
     var id:Int=0
 }

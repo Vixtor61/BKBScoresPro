@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.bkbscorespro.database.entities.Match
+import com.example.bkbscorespro.database.entities.Team
 
 @Dao
 interface MatchDao{
@@ -18,5 +19,8 @@ interface MatchDao{
 
     @Query("DELETE FROM bkb_match")
     fun nukeTable()
+
+    @Query("SELECT * FROM team t WHERE :teamId = t.id")
+    fun getTeamById(teamId: Int):LiveData<Team>
 
 }

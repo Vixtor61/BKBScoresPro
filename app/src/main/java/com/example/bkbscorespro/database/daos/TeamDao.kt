@@ -15,6 +15,8 @@ interface TeamDao{
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insert(team:Team):Long
 
+
+
     @Query("DELETE FROM team")
     fun nukeTable()
 }

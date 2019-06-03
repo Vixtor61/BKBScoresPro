@@ -16,11 +16,17 @@ import com.example.bkbscorespro.gui.fragments.NewMatchFragment
 import com.example.bkbscorespro.viewModels.TeamViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
+import java.io.Serializable
+
+
+
 
 class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionListener,NewMatchFragment.NewMatchListener,MatchesListFragment.MatchesFragmetListener{
     override fun matchOnclick(match: Match) {
         Toast.makeText(this,match.id.toString(),Toast.LENGTH_LONG).show()
-
+        var intent = Intent(this,ShowMatchActivity::class.java)
+        intent.putExtra("EXTRA",match)
+        startActivity(intent)
     }
 
     private lateinit var teamViewModel: TeamViewModel
@@ -78,11 +84,22 @@ class MainActivity : AppCompatActivity() ,MainFragment.OnFragmentInteractionList
         setContentView(R.layout.activity_main)
         teamViewModel = ViewModelProviders.of(this).get(TeamViewModel::class.java)
         mainFragment = MainFragment.newInstance()
-        changeFragment(R.id.og_fragment,mainFragment)
+        supportFragmentManager.beginTransaction().replace(R.id.og_fragment,mainFragment).commit()
 
 
     }
     private fun changeFragment(id:Int,fragment: Fragment){
-        supportFragmentManager.beginTransaction().replace(id,fragment).commit()
+        supportFragmentManager.beginTransaction().replace(id,fragment).addToBackStack(null).commit()
     }
+
+    override fun onBackPressed() {
+        Log.i("FRAGMENT_COUNT",supportFragmentManager.backStackEntryCount.toString())
+        if(supportFragmentManager.backStackEntryCount > 1){
+            supportFragmentManager.popBackStackImmediate()
+        }
+        else{
+            super.onBackPressed()
+        }
+    }
+
 }

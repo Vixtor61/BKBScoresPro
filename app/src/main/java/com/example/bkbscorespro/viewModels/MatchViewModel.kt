@@ -30,6 +30,10 @@ class MatchViewModel(application: Application) : AndroidViewModel(application){
             matchRepo.insert(match)
         }
     }
+    fun getTeamById(teamId: Int):LiveData<Team> =
+        matchRepo.getTeamById(teamId)
+
+
 
 
 

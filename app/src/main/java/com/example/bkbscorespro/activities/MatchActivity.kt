@@ -35,7 +35,7 @@ class MatchActivity : AppCompatActivity(),LifecycleOwner {
         teamViewModel.currentTeamB = Team(teamB)
        teamViewModel.insertA(teamViewModel.currentTeamA)
         teamViewModel.insertB(teamViewModel.currentTeamB)
-        Log.i("CURRENT",teamViewModel.idA.toString())
+     //   Log.i("CURRENT",teamViewModel.idA.toString())
         teamViewModel.currentScoreA.observe(this, Observer { score->
                 score?.let {
                     score_a.text = score.toString()
